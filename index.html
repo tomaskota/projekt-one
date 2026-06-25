@@ -1,41 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Projekt ONE</title>
-<link rel="stylesheet" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="css/app.css" rel="stylesheet">
 </head>
-<body>
-<div class="app">
-<header class="hero">
-<h1>💪 Projekt ONE</h1>
-<div id="today"></div>
-</header>
+<body class="bg-dark text-light">
+<div class="container py-4" style="max-width:540px">
+<div class="card glass mb-3"><div class="card-body">
+<h2 class="mb-1">💪 Projekt ONE</h2>
+<div id="today" class="text-secondary"></div>
+<h4 class="mt-3">Ahoj Tomáši 👋</h4>
+<p class="mb-1">Tvůj cíl <strong>84 kg</strong></p>
+<div class="progress"><div id="bar" class="progress-bar bg-success"></div></div>
+<div class="mt-3 fw-bold" id="weightLabel"></div>
+<div class="input-group mt-2">
+<input id="weight" class="form-control" type="number" step="0.1">
+<button id="saveBtn" class="btn btn-primary">Uložit</button>
+</div>
+</div></div>
 
-<section class="card">
-<h2>Ahoj Tomáši 👋</h2>
-<p>Tvůj cíl: <b>84 kg</b></p>
-<div class="progress"><div id="bar"></div></div>
-<p id="weightText"></p>
-<input id="weight" type="number" step="0.1">
-<button id="saveWeight">Uložit váhu</button>
-</section>
+<div class="card glass mb-3"><div class="card-body">
+<h5><i class="bi bi-fire"></i> Dnešní plán</h5>
+<div id="plan"></div>
+<button class="btn btn-success w-100 mt-3">Začít trénink</button>
+</div></div>
 
-<section class="card">
-<h2>Dnešní plán</h2>
-<p id="plan"></p>
-<button class="primary">Začít trénink</button>
-</section>
-
-<nav class="bottom">
-<button class="active">🏠<span>Domů</span></button>
-<button>💪<span>Trénink</span></button>
-<button>🥗<span>Jídlo</span></button>
-<button>📈<span>Pokrok</span></button>
-</nav>
+<div class="fixed-bottom bg-black border-top">
+<div class="d-flex justify-content-around py-2">
+<div>🏠<br><small>Domů</small></div>
+<div>💪<br><small>Trénink</small></div>
+<div>🥗<br><small>Jídlo</small></div>
+<div>📈<br><small>Pokrok</small></div>
+</div>
+</div>
 </div>
 <script src="js/storage.js"></script>
 <script src="js/app.js"></script>
-</body>
-</html>
+</body></html>
