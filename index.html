@@ -4,59 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Projekt ONE</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
+<div class="app">
+<header class="hero">
 <h1>💪 Projekt ONE</h1>
-<p id="date"></p>
+<div id="today"></div>
 </header>
 
-<div class="card">
-<h2>Dashboard</h2>
-<p><b>Další trénink:</b> <span id="next"></span></p>
-<p><b>Aktuální váha:</b> <span id="currentWeight"></span></p>
+<section class="card">
+<h2>Ahoj Tomáši 👋</h2>
+<p>Tvůj cíl: <b>84 kg</b></p>
+<div class="progress"><div id="bar"></div></div>
+<p id="weightText"></p>
 <input id="weight" type="number" step="0.1">
-<button onclick="saveWeight()">Uložit váhu</button>
+<button id="saveWeight">Uložit váhu</button>
+</section>
+
+<section class="card">
+<h2>Dnešní plán</h2>
+<p id="plan"></p>
+<button class="primary">Začít trénink</button>
+</section>
+
+<nav class="bottom">
+<button class="active">🏠<span>Domů</span></button>
+<button>💪<span>Trénink</span></button>
+<button>🥗<span>Jídlo</span></button>
+<button>📈<span>Pokrok</span></button>
+</nav>
 </div>
-
-<div class="card">
-<h2>Tréninky</h2>
-
-<details open>
-<summary><b>Týden 1</b></summary>
-
-<details>
-<summary>Úterý ✅</summary>
-<p>Splněno.</p>
-</details>
-
-<details open>
-<summary>Pátek</summary>
-<label><input id="fri1" type="checkbox"> Rozcvičení</label><br>
-<label><input id="fri2" type="checkbox"> Dřepy 3×15</label><br>
-<label><input id="fri3" type="checkbox"> Kliky 3×8–10</label><br>
-<label><input id="fri4" type="checkbox"> Výpady 3×10</label><br>
-<label><input id="fri5" type="checkbox"> Glute Bridge 3×15</label><br>
-<label><input id="fri6" type="checkbox"> Plank 3×30 s</label><br>
-</details>
-
-<details>
-<summary>Neděle</summary>
-<label><input id="sun1" type="checkbox"> 40 min chůze</label><br>
-<label><input id="sun2" type="checkbox"> Core</label><br>
-</details>
-
-</details>
-
-</div>
-
-<div class="card">
-<h2>Poznámky</h2>
-<textarea id="notes" rows="6"></textarea><br>
-<button onclick="saveNotes()">Uložit poznámky</button>
-</div>
-
-<script src="script.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
