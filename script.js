@@ -1,1 +1,18 @@
-const d=new Date();today.textContent=d.toLocaleDateString('cs-CZ',{weekday:'long',day:'numeric',month:'long',year:'numeric'});const wd=d.getDay();let html='',plan='Regenerace / 30 min chůze';if(wd===2){plan='Úterní trénink';html='<label><input id=a1 type=checkbox>Dřepy 3x12</label><br><label><input id=a2 type=checkbox>Kliky o stůl 3x8</label><br><label><input id=a3 type=checkbox>Výpady 3x10</label><br><label><input id=a4 type=checkbox>Glute Bridge 3x15</label><br><label><input id=a5 type=checkbox>Plank 3x30s</label>';}if(wd===5){plan='Páteční trénink';html='<label><input id=b1 type=checkbox>Dřepy 3x15</label><br><label><input id=b2 type=checkbox>Kliky 3x max</label>';}if(wd===0){plan='Nedělní trénink';html='<label><input id=c1 type=checkbox>40 min chůze</label><br><label><input id=c2 type=checkbox>Core</label>';}planEl=document.getElementById('plan');planEl.textContent=plan;workout.innerHTML=html;document.querySelectorAll('input[type=checkbox]').forEach(c=>{const k='cb_'+c.id;c.checked=localStorage.getItem(k)==='1';c.onchange=()=>localStorage.setItem(k,c.checked?'1':'0');});function saveWeight(){localStorage.setItem('weight',weight.value);show()}function show(){weight.value=localStorage.getItem('weight')||92;current.textContent='Aktuální váha: '+weight.value+' kg'}function saveNotes(){localStorage.setItem('notes',notes.value);alert('Uloženo')}notes.value=localStorage.getItem('notes')||'';show();
+const now=new Date();
+date.textContent=now.toLocaleDateString('cs-CZ',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const nextMap={0:'Úterý',1:'Úterý',2:'Pátek',3:'Pátek',4:'Pátek',5:'Neděle',6:'Úterý'};
+next.textContent=nextMap[now.getDay()];
+function saveWeight(){localStorage.setItem('po_weight',weight.value);load();}
+function load(){
+ let w=localStorage.getItem('po_weight')||'92';
+ weight.value=w;
+ currentWeight.textContent=w+' kg';
+ notes.value=localStorage.getItem('po_notes')||'';
+ document.querySelectorAll('input[type=checkbox]').forEach(c=>{
+   let k='po_'+c.id;
+   c.checked=localStorage.getItem(k)==='1';
+   c.onchange=()=>localStorage.setItem(k,c.checked?'1':'0');
+ });
+}
+function saveNotes(){localStorage.setItem('po_notes',notes.value);alert('Poznámky uloženy');}
+load();

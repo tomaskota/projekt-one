@@ -1,1 +1,6 @@
-body{font-family:Arial;background:#111827;color:#fff;max-width:900px;margin:auto;padding:20px}.card{background:#1f2937;padding:20px;border-radius:12px;margin:20px 0}button{padding:10px;background:#2563eb;color:#fff;border:none;border-radius:8px}input,textarea{width:100%;margin:8px 0;padding:8px}
+body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;max-width:900px;margin:auto;padding:20px}
+header{text-align:center}
+.card{background:#1e293b;padding:20px;border-radius:12px;margin:18px 0}
+button{background:#2563eb;color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+input[type=number],textarea{width:100%;padding:8px;margin:8px 0}
+summary{cursor:pointer;padding:8px}

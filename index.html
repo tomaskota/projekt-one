@@ -1,1 +1,62 @@
-<!DOCTYPE html><html lang="cs"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Projekt FEŠÁK</title><link rel="stylesheet" href="style.css"></head><body><h1>💪 Projekt FEŠÁK</h1><p id="today"></p><div class="card"><h2>Dnešní plán</h2><p id="plan"></p><div id="workout"></div></div><div class="card"><h2>Váha</h2><input id="weight" type="number" step="0.1"><button onclick="saveWeight()">Uložit</button><p id="current"></p></div><div class="card"><h2>Poznámky</h2><textarea id="notes"></textarea><button onclick="saveNotes()">Uložit</button></div><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projekt ONE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>💪 Projekt ONE</h1>
+<p id="date"></p>
+</header>
+
+<div class="card">
+<h2>Dashboard</h2>
+<p><b>Další trénink:</b> <span id="next"></span></p>
+<p><b>Aktuální váha:</b> <span id="currentWeight"></span></p>
+<input id="weight" type="number" step="0.1">
+<button onclick="saveWeight()">Uložit váhu</button>
+</div>
+
+<div class="card">
+<h2>Tréninky</h2>
+
+<details open>
+<summary><b>Týden 1</b></summary>
+
+<details>
+<summary>Úterý ✅</summary>
+<p>Splněno.</p>
+</details>
+
+<details open>
+<summary>Pátek</summary>
+<label><input id="fri1" type="checkbox"> Rozcvičení</label><br>
+<label><input id="fri2" type="checkbox"> Dřepy 3×15</label><br>
+<label><input id="fri3" type="checkbox"> Kliky 3×8–10</label><br>
+<label><input id="fri4" type="checkbox"> Výpady 3×10</label><br>
+<label><input id="fri5" type="checkbox"> Glute Bridge 3×15</label><br>
+<label><input id="fri6" type="checkbox"> Plank 3×30 s</label><br>
+</details>
+
+<details>
+<summary>Neděle</summary>
+<label><input id="sun1" type="checkbox"> 40 min chůze</label><br>
+<label><input id="sun2" type="checkbox"> Core</label><br>
+</details>
+
+</details>
+
+</div>
+
+<div class="card">
+<h2>Poznámky</h2>
+<textarea id="notes" rows="6"></textarea><br>
+<button onclick="saveNotes()">Uložit poznámky</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
